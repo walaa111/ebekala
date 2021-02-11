@@ -25,6 +25,14 @@ module.exports = [
       "window.admob",
       "window.tappx"
     ]
+  },
+  {
+    "id": "phonegap-plugin-push.PushNotification",
+    "file": "plugins/phonegap-plugin-push/www/push.js",
+    "pluginId": "phonegap-plugin-push",
+    "clobbers": [
+      "PushNotification"
+    ]
   }
 ];
 module.exports.metadata = 
@@ -34,7 +42,8 @@ module.exports.metadata =
   "cordova-plugin-inappbrowser": "3.0.0",
   "cordova-connectivity-monitor": "1.2.2",
   "cordova-play-services-version-adapter": "1.0.2",
-  "cordova-admob": "5.1.0"
+  "cordova-admob": "5.1.0",
+  "phonegap-plugin-push": "2.1.3"
 };
 // BOTTOM OF METADATA
 });

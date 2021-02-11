@@ -1,34 +1,33 @@
 {
   "project_info": {
-    "project_number": "905263301667",
-    "firebase_url": "https://lasttest-31454.firebaseio.com",
-    "project_id": "lasttest-31454",
-    "storage_bucket": "lasttest-31454.appspot.com"
+    "project_number": "1007443588918",
+    "project_id": "ebekala",
+    "storage_bucket": "ebekala.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:905263301667:android:2685592900f9991fe5dd96",
+        "mobilesdk_app_id": "1:1007443588918:android:3ba9814bade899cca06597",
         "android_client_info": {
-          "package_name": "com.realdealagency.quraanappmobile"
+          "package_name": "com.realdealagency.ebekalaa"
         }
       },
       "oauth_client": [
         {
-          "client_id": "905263301667-n18p5qb9jv5jf1dsr7c63641ldrfdfc5.apps.googleusercontent.com",
+          "client_id": "1007443588918-nlg7ragbf0269b15j73svj3ahqd6q2cb.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCCcSCXX0onu7MalQJfijEMg0EJ8O3ib-4"
+          "current_key": "AIzaSyDw0WISmey48z-tmuTNHjN4qMdv--GFeF4"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "905263301667-n18p5qb9jv5jf1dsr7c63641ldrfdfc5.apps.googleusercontent.com",
+              "client_id": "1007443588918-nlg7ragbf0269b15j73svj3ahqd6q2cb.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
