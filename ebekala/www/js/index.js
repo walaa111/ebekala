@@ -54,7 +54,7 @@ receivedEvent: function(id) {
   iosSettings["kOSSettingsKeyInAppLaunchURL"] = false;
   
   window.plugins.OneSignal
-    .startInit("YOUR_ONESIGNAL_APP_ID")
+    .startInit("7b232030-af95-4654-87af-48cfd36354b3")
     .handleNotificationOpened(notificationOpenedCallback)
     .iOSSettings(iosSettings)
     .inFocusDisplaying(window.plugins.OneSignal.OSInFocusDisplayOption.Notification)
