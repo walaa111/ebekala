@@ -29,7 +29,7 @@ Ebekala
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
     </platform>
-    <preference name="android-minSdkVersion" value="14" />
+    <preference name="android-minSdkVersion" value="15" />
     <preference name="android-targetSdkVersion" value="29" />
     <engine name="android" spec="~6.3.0" />
     <plugin name="cordova-plugin-inappbrowser" spec="^3.0.0" />
