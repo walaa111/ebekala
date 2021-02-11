@@ -37,10 +37,11 @@
 var app = {
 
           //notify//
-
+     
 // Add to index.js or the first page that loads with your app.
 
 receivedEvent: function(id) {
+  OneSignal.setLogLevel(OneSignal.LOG_LEVEL.DEBUG, OneSignal.LOG_LEVEL.DEBUG);
   //START ONESIGNAL CODE
   //Remove this method to stop OneSignal Debugging 
   window.plugins.OneSignal.setLogLevel({logLevel: 6, visualLevel: 0});
