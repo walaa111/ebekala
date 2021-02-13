@@ -91,18 +91,18 @@ public class OneSignalController {
       JSONObject jo = data.getJSONObject(0);
       final CallbackContext jsPostNotificationCallBack = callbackContext;
       OneSignal.postNotification(jo,
-              new PostNotificationResponseHandler() {
-                @Override
-                public void onSuccess(JSONObject response) {
-                  CallbackHelper.callbackSuccess(jsPostNotificationCallBack, response);
-                }
-
-                @Override
-                public void onFailure(JSONObject response) {
-                  CallbackHelper.callbackError(jsPostNotificationCallBack, response);
-                }
-              });
-
+        new PostNotificationResponseHandler() {
+          @Override
+          public void onSuccess(JSONObject response) {
+            CallbackHelper.callbackSuccess(jsPostNotificationCallBack, response);
+          }
+          
+          @Override
+          public void onFailure(JSONObject response) {
+            CallbackHelper.callbackError(jsPostNotificationCallBack, response);
+          }
+        });
+      
       return true;
     }
     catch (Throwable t) {
@@ -158,7 +158,7 @@ public class OneSignalController {
             jsonIds.put("pushToken", registrationId);
           else
             jsonIds.put("pushToken", "");
-
+          
           CallbackHelper.callbackSuccess(jsIdsAvailableCallBack, jsonIds);
         }
         catch (Throwable t) {
@@ -191,14 +191,14 @@ public class OneSignalController {
     }
   }
 
-  public static boolean setInFocusDisplaying(JSONArray data) {
+  public static boolean setInFocusDisplaying(CallbackContext callbackContext, JSONArray data) {
     try {
       OneSignal.setInFocusDisplaying(data.getInt(0));
       return true;
     }
     catch (JSONException e) {
-      Log.e(TAG, "execute: Got JSON Exception " + e.getMessage());
-      return false;
+       Log.e(TAG, "execute: Got JSON Exception " + e.getMessage());
+       return false;
     }
   }
 
@@ -226,12 +226,22 @@ public class OneSignalController {
     } catch (JSONException e) {
       e.printStackTrace();
       return false;
-    }
+   }
   }
 
   public static boolean grantConsent(JSONArray data) {
     try {
       OneSignal.provideUserConsent(data.getBoolean(0));
+      return true;
+   } catch (JSONException e) {
+      e.printStackTrace();
+      return false;
+   }
+  }
+
+  public static boolean setExternalUserId(JSONArray data) {
+    try {
+      OneSignal.setExternalUserId(data.getString(0));
       return true;
     } catch (JSONException e) {
       e.printStackTrace();
@@ -239,33 +249,14 @@ public class OneSignalController {
     }
   }
 
-  public static boolean setExternalUserId(final CallbackContext callback, JSONArray data) {
+  public static boolean removeExternalUserId() {
     try {
-      String authHashToken = null;
-      if (data.length() > 1)
-        authHashToken = data.getString(1);
-
-      OneSignal.setExternalUserId(data.getString(0), authHashToken, new OneSignal.OSExternalUserIdUpdateCompletionHandler() {
-        @Override
-        public void onComplete(JSONObject results) {
-          CallbackHelper.callbackSuccess(callback, results);
-        }
-      });
+      OneSignal.removeExternalUserId();
       return true;
-    } catch (JSONException e) {
-      e.printStackTrace();
     }
-    return false;
+    catch(Throwable t) {
+      t.printStackTrace();
+      return false;
+    }
   }
-
-  public static boolean removeExternalUserId(final CallbackContext callback) {
-    OneSignal.removeExternalUserId(new OneSignal.OSExternalUserIdUpdateCompletionHandler() {
-      @Override
-      public void onComplete(JSONObject results) {
-        CallbackHelper.callbackSuccess(callback, results);
-      }
-    });
-    return true;
-  }
-
 }
