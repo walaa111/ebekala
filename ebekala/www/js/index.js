@@ -97,15 +97,11 @@ inAppBrowserbRef.addEventListener('loadstart', function() {
        //admob
 
 
-
-    },
-
-
           //notify//
      
 // Add to index.js or the first page that loads with your app.
 
-onDeviceReady: function() {
+
   this.receivedEvent('deviceready');
   // Add to index.js or the first page that loads with your app.
 // For Intel XDK and please add this to your app.js.
@@ -127,21 +123,36 @@ window.plugins.OneSignal
 // This improves the effectiveness of OneSignal's "best-time" notification scheduling feature.
 // window.plugins.OneSignal.syncHashedEmail(userEmail);
 }, false);
-},
 
-// Update DOM on a Received Event
-receivedEvent: function(id) {
-  var parentElement = document.getElementById(id);
-  var listeningElement = parentElement.querySelector('.listening');
-  var receivedElement = parentElement.querySelector('.received');
 
-  listeningElement.setAttribute('style', 'display:none;');
-  receivedElement.setAttribute('style', 'display:block;');
-
-  console.log('Received Event: ' + id);
-}
 
  //end of notify//
+    },
+
+
+
+     // Update DOM on a Received Event
+
+     receivedEvent: function (id) {
+
+      var parentElement = document.getElementById(id);
+
+      var listeningElement = parentElement.querySelector('.listening');
+
+      var receivedElement = parentElement.querySelector('.received');
+
+
+
+      listeningElement.setAttribute('style', 'display:none;');
+
+      receivedElement.setAttribute('style', 'display:block;');
+
+
+
+      console.log('Received Event: ' + id);
+
+
+  }
 };
 
 
