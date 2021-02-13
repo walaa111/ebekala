@@ -154,7 +154,7 @@ receivedEvent: function(id) {
     console.log("User accepted notifications: " + accepted);
   });
   //END ONESIGNAL CODE
-},
+}
 
  //end of notify//
 };
