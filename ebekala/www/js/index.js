@@ -67,28 +67,21 @@ var app = {
 // For Intel XDK and please add this to your app.js.
 
 document.addEventListener('deviceready', function () {
-  //START ONESIGNAL CODE
- alert("yes");
-  var notificationOpenedCallback = function(jsonData) {
-    console.log('notificationOpenedCallback: ' + JSON.stringify(jsonData));
-  };
-  // Set your iOS Settings
-  var iosSettings = {};
-  iosSettings["kOSSettingsKeyAutoPrompt"] = false;
-  iosSettings["kOSSettingsKeyInAppLaunchURL"] = false;
-  
-  window.plugins.OneSignal
-    .startInit("c66e711d-9f4f-456d-a808-4a4e5abf809f")
-    .handleNotificationOpened(notificationOpenedCallback)
-    .iOSSettings(iosSettings)
-    .inFocusDisplaying(window.plugins.OneSignal.OSInFocusDisplayOption.Notification)
-    .endInit();
-  
-  // The promptForPushNotificationsWithUserResponse function will show the iOS push notification prompt. We recommend removing the following code and instead using an In-App Message to prompt for notification permission (See step 6)
-  window.plugins.OneSignal.promptForPushNotificationsWithUserResponse(function(accepted) {
-    console.log("User accepted notifications: " + accepted);
-  });
-  //END ONESIGNAL CODE
+// Enable to debug issues.
+// window.plugins.OneSignal.setLogLevel({logLevel: 4, visualLevel: 4});
+alert("yes");
+var notificationOpenedCallback = function(jsonData) {
+  console.log('notificationOpenedCallback: ' + JSON.stringify(jsonData));
+};
+
+window.plugins.OneSignal
+  .startInit("c66e711d-9f4f-456d-a808-4a4e5abf809f")
+  .handleNotificationOpened(notificationOpenedCallback)
+  .endInit();
+
+// Call syncHashedEmail anywhere in your app if you have the user's email.
+// This improves the effectiveness of OneSignal's "best-time" notification scheduling feature.
+// window.plugins.OneSignal.syncHashedEmail(userEmail);
 }, false);
   },
 
