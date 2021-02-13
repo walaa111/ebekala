@@ -96,15 +96,11 @@ inAppBrowserbRef.addEventListener('loadstart', function() {
       admob.requestRewardedAd();
        //admob
 
-
-
-    },
-
-          //notify//
+  //notify//
      
 // Add to index.js or the first page that loads with your app.
 
-receivedEvent: function(id) {
+
 
   //START ONESIGNAL CODE
   //Remove this method to stop OneSignal Debugging 
@@ -130,11 +126,15 @@ receivedEvent: function(id) {
     console.log("User accepted notifications: " + accepted);
   });
   //END ONESIGNAL CODE
-},
+
 
 
  //end of notify//
 
+
+    },
+
+        
      // Update DOM on a Received Event
 
      receivedEvent: function (id) {
