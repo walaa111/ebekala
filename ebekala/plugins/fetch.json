@@ -46,5 +46,29 @@
     },
     "is_top_level": false,
     "variables": {}
+  },
+  "cordova-android-firebase-gradle-release": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-android-firebase-gradle-release"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-android-play-services-gradle-release": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-android-play-services-gradle-release"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "onesignal-cordova-plugin": {
+    "source": {
+      "type": "registry",
+      "id": "onesignal-cordova-plugin"
+    },
+    "is_top_level": true,
+    "variables": {}
   }
 }
