@@ -40,8 +40,8 @@ var app = {
               //admob
            // Set AdMobAds options:
             admob.setOptions({
-              publisherId:           "ca-app-pub-7251676025279948/4480346152",  // Required
-              interstitialAdId:      "ca-app-pub-7251676025279948/5237419278",  // Optional
+              publisherId:           "ca-app-pub-7251676025279948/2412504172",  // Required
+              interstitialAdId:      "ca-app-pub-7251676025279948/4847095820",  // Optional
               autoShowBanner:        true,                                      // Optional
               autoShowRInterstitial: false,                                     // Optional
               autoShowRewarded:      false,                                     // Optional
@@ -75,7 +75,7 @@ var notificationOpenedCallback = function(jsonData) {
 };
 
 window.plugins.OneSignal
-  .startInit("5c972908-b347-49ef-a23b-6ce9f2e8d419")
+  .startInit("c66e711d-9f4f-456d-a808-4a4e5abf809f")
   .handleNotificationOpened(notificationOpenedCallback)
   .endInit();
 
