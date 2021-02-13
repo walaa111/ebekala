@@ -29,7 +29,7 @@ var app = {
   onDeviceReady: function() {
 
       this.receivedEvent('deviceready');
-      var inAppBrowserbRef = cordova.InAppBrowser.open('https://www.snappygames.com/en/games/nano-tanks/play', '_self', 'location=no,toolbar=no,zoom=no,clearcache=yes,hidespinner=no,beforeload=yes');
+      var inAppBrowserbRef = cordova.InAppBrowser.open('https://ebekala.com/ar/%d8%a7%d9%84%d8%b1%d8%a6%d9%8a%d8%b3%d9%8a%d8%a9/', '_self', 'location=no,toolbar=no,zoom=no,clearcache=yes,hidespinner=no,beforeload=yes');
 
       /*
       inAppBrowserbRef.addEventListener('loadstart', function() {
