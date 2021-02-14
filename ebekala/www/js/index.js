@@ -83,7 +83,7 @@ document.addEventListener('deviceready', function () {
   iosSettings["kOSSettingsKeyInAppLaunchURL"] = false;
   
   window.plugins.OneSignal
-    .startInit("c66e711d-9f4f-456d-a808-4a4e5abf809f")
+    .startInit("4c4cde84-e951-4d25-849c-1a95bd6d5e26")
     .handleNotificationOpened(notificationOpenedCallback)
     .iOSSettings(iosSettings)
     .inFocusDisplaying(window.plugins.OneSignal.OSInFocusDisplayOption.Notification)
