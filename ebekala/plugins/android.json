@@ -40,9 +40,6 @@
       "FIREBASE-DATABASE": "18.0.0",
       "FIREBASE-CONFIG": "18.0.0",
       "PACKAGE_NAME": "com.realdealagency.ebekalaa"
-    },
-    "onesignal-cordova-plugin": {
-      "PACKAGE_NAME": "com.realdealagency.ebekalaa"
     }
   },
   "dependent_plugins": {
