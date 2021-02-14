@@ -35,6 +35,8 @@ Ebekala
     <plugin name="cordova-plugin-whitelist" spec="~1.3.3" />
     <plugin name="cordova-plugin-inappbrowser" spec="~1.7.1" />
 <plugin name="onesignal-cordova-plugin" source="npm" spec="2.3.3" />
+    <plugin name="cordova-admob"  />
+
 
     <!--added
 <preference name="android-minSdkVersion" value="16" />
