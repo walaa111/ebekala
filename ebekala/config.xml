@@ -29,8 +29,12 @@ Ebekala
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
     </platform>
-    <preference name="android-minSdkVersion" value="15" />
+    <preference name="android-minSdkVersion" value="14" />
     <preference name="android-targetSdkVersion" value="29" />
-
+    <plugin name="cordova-plugin-inappbrowser" spec="^3.0.0" />
+    <plugin name="cordova-admob" spec="^5.1.0" />
+    <plugin name="cordova-android-support-gradle-release" spec="~3.0.1">
+        <variable name="ANDROID_SUPPORT_VERSION" value="27.+" />
+    </plugin>
     <plugin name="onesignal-cordova-plugin" spec="~2.11.3" />
 </widget>
