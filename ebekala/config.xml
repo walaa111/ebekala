@@ -33,5 +33,7 @@ Ebekala
     <preference name="android-targetSdkVersion" value="29" />
     <plugin name="cordova-plugin-inappbrowser" spec="^3.0.0" />
     <plugin name="cordova-admob" spec="^5.1.0" />
-    <plugin name="onesignal-cordova-plugin"  />
+    <plugin name="cordova-android-support-gradle-release" spec="~3.0.1">
+        <variable name="ANDROID_SUPPORT_VERSION" value="27.+" />
+    </plugin>
 </widget>

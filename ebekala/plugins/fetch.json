@@ -63,10 +63,10 @@
     "is_top_level": true,
     "variables": {}
   },
-  "onesignal-cordova-plugin": {
+  "cordova-android-support-gradle-release": {
     "source": {
       "type": "registry",
-      "id": "onesignal-cordova-plugin"
+      "id": "cordova-android-support-gradle-release"
     },
     "is_top_level": true,
     "variables": {}
