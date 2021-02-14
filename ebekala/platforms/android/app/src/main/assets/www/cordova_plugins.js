@@ -1,14 +1,6 @@
 cordova.define('cordova/plugin_list', function(require, exports, module) {
 module.exports = [
   {
-    "id": "onesignal-cordova-plugin.OneSignal",
-    "file": "plugins/onesignal-cordova-plugin/www/OneSignal.js",
-    "pluginId": "onesignal-cordova-plugin",
-    "clobbers": [
-      "OneSignal"
-    ]
-  },
-  {
     "id": "cordova-plugin-inappbrowser.inappbrowser",
     "file": "plugins/cordova-plugin-inappbrowser/www/inappbrowser.js",
     "pluginId": "cordova-plugin-inappbrowser",
@@ -39,7 +31,6 @@ module.exports.metadata =
 {
   "cordova-android-firebase-gradle-release": "4.0.0",
   "cordova-android-support-gradle-release": "3.0.1",
-  "onesignal-cordova-plugin": "2.11.3",
   "cordova-plugin-whitelist": "1.3.4",
   "cordova-plugin-inappbrowser": "4.1.0",
   "cordova-connectivity-monitor": "1.2.2",

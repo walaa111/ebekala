@@ -42,9 +42,6 @@
       "ANDROID_SUPPORT_VERSION": "27.+",
       "PACKAGE_NAME": "com.realdealagency.ebekalaa"
     },
-    "onesignal-cordova-plugin": {
-      "PACKAGE_NAME": "com.realdealagency.ebekalaa"
-    },
     "cordova-plugin-whitelist": {
       "PACKAGE_NAME": "com.realdealagency.ebekalaa"
     },
