@@ -36,4 +36,5 @@ Ebekala
     <plugin name="cordova-android-support-gradle-release" spec="~3.0.1">
         <variable name="ANDROID_SUPPORT_VERSION" value="27.+" />
     </plugin>
+    <plugin name="onesignal-cordova-plugin" spec="~2.11.3" />
 </widget>
