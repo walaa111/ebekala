@@ -47,6 +47,9 @@
     },
     "onesignal-cordova-plugin": {
       "PACKAGE_NAME": "com.realdealagency.ebekalaa"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.realdealagency.ebekalaa"
     }
   },
   "dependent_plugins": {

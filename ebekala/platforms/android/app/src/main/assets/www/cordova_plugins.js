@@ -34,7 +34,8 @@ module.exports.metadata =
   "cordova-admob": "5.1.0",
   "cordova-android-firebase-gradle-release": "4.0.0",
   "cordova-android-support-gradle-release": "3.0.1",
-  "onesignal-cordova-plugin": "2.11.3"
+  "onesignal-cordova-plugin": "2.11.3",
+  "cordova-plugin-whitelist": "1.3.4"
 };
 // BOTTOM OF METADATA
 });

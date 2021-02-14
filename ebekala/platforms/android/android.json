@@ -19,6 +19,10 @@
             {
               "xml": "<feature name=\"OneSignalPush\"><param name=\"android-package\" value=\"com.plugin.gcm.OneSignalPush\" /></feature>",
               "count": 1
+            },
+            {
+              "xml": "<feature name=\"Whitelist\"><param name=\"android-package\" value=\"org.apache.cordova.whitelist.WhitelistPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
+              "count": 1
             }
           ]
         }
@@ -118,6 +122,9 @@
     },
     "onesignal-cordova-plugin": {
       "PACKAGE_NAME": "com.realdealagency.ebekalaa"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.realdealagency.ebekalaa"
     }
   },
   "dependent_plugins": {},
@@ -154,6 +161,7 @@
     "cordova-admob": "5.1.0",
     "cordova-android-firebase-gradle-release": "4.0.0",
     "cordova-android-support-gradle-release": "3.0.1",
-    "onesignal-cordova-plugin": "2.11.3"
+    "onesignal-cordova-plugin": "2.11.3",
+    "cordova-plugin-whitelist": "1.3.4"
   }
 }
