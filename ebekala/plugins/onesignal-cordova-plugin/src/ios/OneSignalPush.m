@@ -31,8 +31,8 @@
 #import "OneSignalPush.h"
 #import <OneSignal/OneSignal.h>
 
-NSString* notificationReceivedCallbackId;
-NSString* notificationOpenedCallbackId;
+NSString* notficationReceivedCallbackId;
+NSString* notficationOpenedCallbackId;
 NSString* getTagsCallbackId;
 NSString* getIdsCallbackId;
 NSString* postNotificationCallbackId;
@@ -41,7 +41,6 @@ NSString* subscriptionObserverCallbackId;
 NSString* promptForPushNotificationsWithUserResponseCallbackId;
 NSString* setEmailCallbackId;
 NSString* setUnauthenticatedEmailCallbackId;
-NSString* setExternalIdCallbackId;
 NSString* logoutEmailCallbackId;
 NSString* emailSubscriptionCallbackId;
 
@@ -72,7 +71,7 @@ void processNotificationReceived(OSNotification* _notif) {
                                                          options:NSJSONReadingMutableContainers
                                                            error:&jsonError];
     if(!jsonError) {
-        successCallback(notificationReceivedCallbackId, json);
+        successCallback(notficationReceivedCallbackId, json);
         notification = nil;
     }
 }
@@ -85,7 +84,7 @@ void processNotificationOpened(OSNotificationOpenedResult* result) {
                                                          options:NSJSONReadingMutableContainers
                                                            error:&jsonError];
     if(!jsonError) {
-        successCallback(notificationOpenedCallbackId, json);
+        successCallback(notficationOpenedCallbackId, json);
         actionNotification = nil;
     }
 }
@@ -93,24 +92,24 @@ void processNotificationOpened(OSNotificationOpenedResult* result) {
 void initOneSignalObject(NSDictionary* launchOptions, const char* appId, int displayOption, BOOL inAppLaunchURL, BOOL autoPrompt, BOOL fromColdStart) {
     [OneSignal setValue:@"cordova" forKey:@"mSDKType"];
 
-    NSString* appIdStr = (appId ? [NSString stringWithUTF8String: appId] : nil);    
+    NSString* appIdStr = (appId ? [NSString stringWithUTF8String: appId] : nil);
+    
     NSDictionary *iOSSettings = initialLaunchFired ? @{kOSSettingsKeyAutoPrompt : @(autoPrompt),
                                                        kOSSettingsKeyInFocusDisplayOption : @(displayOption),
                                                        kOSSettingsKeyInAppLaunchURL : @(inAppLaunchURL),
-                                                       @"kOSSettingsKeyInOmitNoAppIdLogging": @(fromColdStart)} : @{@"kOSSettingsKeyInOmitNoAppIdLogging": @(fromColdStart),
-                                                                                                                          kOSSettingsKeyAutoPrompt : @false
-                                                                                                                        };
+                                                       @"kOSSettingsKeyInOmitNoAppIdLogging": @(fromColdStart)} : @{};
     
     [OneSignal initWithLaunchOptions:launchOptions appId:appIdStr handleNotificationReceived:^(OSNotification* _notif) {
         notification = _notif;
         if (pluginCommandDelegate)
             processNotificationReceived(_notif);
-    } handleNotificationAction:^(OSNotificationOpenedResult* openResult) {
-        actionNotification = openResult;
-        if (pluginCommandDelegate)
-            processNotificationOpened(openResult);
-    } settings: iOSSettings];
-
+    }
+            handleNotificationAction:^(OSNotificationOpenedResult* openResult) {
+                actionNotification = openResult;
+                if (pluginCommandDelegate)
+                    processNotificationOpened(openResult);
+            } settings: iOSSettings];
+    
     initialLaunchFired = true;
 }
 
@@ -173,11 +172,10 @@ static Class delegateClass = nil;
 }
 
 - (void)setNotificationReceivedHandler:(CDVInvokedUrlCommand*)command {
-    notificationReceivedCallbackId = command.callbackId;
+    notficationReceivedCallbackId = command.callbackId;
 }
-
 - (void)setNotificationOpenedHandler:(CDVInvokedUrlCommand*)command {
-    notificationOpenedCallbackId = command.callbackId;
+    notficationOpenedCallbackId = command.callbackId;
 }
 
 - (void)init:(CDVInvokedUrlCommand*)command {
@@ -228,10 +226,6 @@ static Class delegateClass = nil;
 - (void)registerForPushNotifications:(CDVInvokedUrlCommand*)command {
     [OneSignal registerForPushNotifications];
 }
-    
-- (void)setLocationShared:(CDVInvokedUrlCommand *)command {
-   [OneSignal setLocationShared:[command.arguments[0] boolValue]];
-}
 
 - (void)promptForPushNotificationsWithUserResponse:(CDVInvokedUrlCommand*)command {
    promptForPushNotificationsWithUserResponseCallbackId = command.callbackId;
@@ -239,6 +233,7 @@ static Class delegateClass = nil;
         successCallback(promptForPushNotificationsWithUserResponseCallbackId, @{@"accepted": (accepted ? @"true" : @"false")});
     }];
 }
+
 
 - (void)setSubscription:(CDVInvokedUrlCommand*)command {
     [OneSignal setSubscription:[command.arguments[0] boolValue]];
@@ -343,107 +338,5 @@ static Class delegateClass = nil;
     }];
 }
 
-- (void)userProvidedPrivacyConsent:(CDVInvokedUrlCommand *)command {
-    CDVPluginResult* commandResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsBool:!OneSignal.requiresUserPrivacyConsent];
-    commandResult.keepCallback = @1;
-    [pluginCommandDelegate sendPluginResult:commandResult callbackId:command.callbackId];
-}
-    
-- (void)setRequiresUserPrivacyConsent:(CDVInvokedUrlCommand *)command {
-    if (command.arguments.count >= 1)
-        [OneSignal setRequiresUserPrivacyConsent:[command.arguments[0] boolValue]];
-}
-
-- (void)provideUserConsent:(CDVInvokedUrlCommand *)command {
-    if (command.arguments.count >= 1)
-        [OneSignal consentGranted:[command.arguments[0] boolValue]];
-}
-
-- (void)setExternalUserId:(CDVInvokedUrlCommand *)command {
-    setExternalIdCallbackId = command.callbackId;
-
-    NSString *externalId = command.arguments[0];
-    NSString *authHashToken = nil;
-
-    if (command.arguments.count > 1)
-        authHashToken = command.arguments[1];
-
-    [OneSignal setExternalUserId:externalId withExternalIdAuthHashToken:authHashToken withSuccess:^(NSDictionary *results) {
-        successCallback(setExternalIdCallbackId, results);
-    } withFailure: ^(NSError* error) {
-        [OneSignal onesignal_Log:ONE_S_LL_VERBOSE message:[NSString stringWithFormat:@"Set external user id Failure with error: %@", error]];
-        failureCallback(setExternalIdCallbackId, error.userInfo);
-    }];
-}
-
-- (void)removeExternalUserId:(CDVInvokedUrlCommand *)command {
-    [OneSignal removeExternalUserId:^(NSDictionary *results) {
-        successCallback(command.callbackId, results);
-    }];
-}
-
-/**
- * In-App Messaging
- */
-
-- (void)setInAppMessageClickHandler:(CDVInvokedUrlCommand*)command {
-    [OneSignal setInAppMessageClickHandler:^(OSInAppMessageAction* action) {
-            NSDictionary *result = @{
-                @"click_name": action.clickName ?: [NSNull null],
-                @"click_url" : action.clickUrl.absoluteString ?: [NSNull null],
-                @"first_click" : @(action.firstClick),
-                @"closes_message" : @(action.closesMessage)
-            };
-            successCallback(command.callbackId, result);
-        }
-    ];
-}
-
-- (void)addTriggers:(CDVInvokedUrlCommand*)command {
-   [OneSignal addTriggers:command.arguments[0]]; 
-}
-
-- (void)removeTriggersForKeys:(CDVInvokedUrlCommand*)command {
-   [OneSignal removeTriggersForKeys:command.arguments[0]];
-}
-
-- (void)getTriggerValueForKey:(CDVInvokedUrlCommand*)command {
-    NSString *key = command.arguments[0];
-    NSString *val = [OneSignal getTriggerValueForKey:key];
-    NSDictionary *result = @{
-            @"value" : val ?: [NSNull null]
-    };
-    successCallback(command.callbackId, result);
-}
-
-- (void)pauseInAppMessages:(CDVInvokedUrlCommand*)command {
-   bool pause = [command.arguments[0] boolValue];
-   [OneSignal pauseInAppMessages:pause];
-}
-
-- (void)sendOutcome:(CDVInvokedUrlCommand*)command {
-    NSString *name = command.arguments[0];
-
-    [OneSignal sendOutcome:name onSuccess:^(OSOutcomeEvent *outcome){
-        successCallback(command.callbackId, [outcome jsonRepresentation]);
-    }];
-}
-
-- (void)sendUniqueOutcome:(CDVInvokedUrlCommand*)command {
-    NSString *name = command.arguments[0];
-
-    [OneSignal sendUniqueOutcome:name onSuccess:^(OSOutcomeEvent *outcome){
-        successCallback(command.callbackId, [outcome jsonRepresentation]);
-    }];
-}
-
-- (void)sendOutcomeWithValue:(CDVInvokedUrlCommand*)command {
-    NSString *name = command.arguments[0];
-    NSNumber *value = command.arguments[1];
-
-    [OneSignal sendOutcomeWithValue:name value:value onSuccess:^(OSOutcomeEvent *outcome){
-        successCallback(command.callbackId, [outcome jsonRepresentation]);
-    }];
-}
-
 @end
+
