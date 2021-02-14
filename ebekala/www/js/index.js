@@ -27,26 +27,73 @@ var app = {
   // Bind any cordova events here. Common events are:
   // 'pause', 'resume', etc.
   onDeviceReady: function() {
+
       this.receivedEvent('deviceready');
+      var inAppBrowserbRef = cordova.InAppBrowser.open('https://ebekala.com/ar/%d8%a7%d9%84%d8%b1%d8%a6%d9%8a%d8%b3%d9%8a%d8%a9/', '_self', 'location=no,toolbar=no,zoom=no,clearcache=yes,hidespinner=no,beforeload=yes');
+
+      /*
+      inAppBrowserbRef.addEventListener('loadstart', function() {
+        alert("yes");
+      });
+      */
+      
+              //admob
+           // Set AdMobAds options:
+            admob.setOptions({
+              publisherId:           "ca-app-pub-7251676025279948/2412504172",  // Required
+              interstitialAdId:      "ca-app-pub-7251676025279948/4847095820",  // Optional
+              autoShowBanner:        true,                                      // Optional
+              autoShowRInterstitial: false,                                     // Optional
+              autoShowRewarded:      false,                                     // Optional
+              tappxIdiOS:            "/XXXXXXXXX/Pub-XXXX-iOS-IIII",            // Optional
+              tappxIdAndroid:        "/XXXXXXXXX/Pub-XXXX-Android-AAAA",        // Optional
+              tappxShare:            0.5                                        // Optional
+            });
+            
+            // Start showing banners (atomatic when autoShowBanner is set to true)
+            admob.createBannerView();
+            
+            // Request interstitial ad (will present automatically when autoShowInterstitial is set to true)
+            admob.requestInterstitialAd();
+       
+            // Request rewarded ad (will present automatically when autoShowRewarded is set to true)
+            admob.requestRewardedAd();
+             //admob
+      
+      
+//notifysss
+
       // Add to index.js or the first page that loads with your app.
+// Add to index.js or the first page that loads with your app.
+// For Intel XDK and please add this to your app.js.
+
+// Add to index.js or the first page that loads with your app.
 // For Intel XDK and please add this to your app.js.
 
 document.addEventListener('deviceready', function () {
-// Enable to debug issues.
-// window.plugins.OneSignal.setLogLevel({logLevel: 4, visualLevel: 4});
-
-var notificationOpenedCallback = function(jsonData) {
-  console.log('notificationOpenedCallback: ' + JSON.stringify(jsonData));
-};
-
-window.plugins.OneSignal
-  .startInit("4c4cde84-e951-4d25-849c-1a95bd6d5e26")
-  .handleNotificationOpened(notificationOpenedCallback)
-  .endInit();
-
-// Call syncHashedEmail anywhere in your app if you have the user's email.
-// This improves the effectiveness of OneSignal's "best-time" notification scheduling feature.
-// window.plugins.OneSignal.syncHashedEmail(userEmail);
+  //Remove this method to stop OneSignal Debugging 
+  window.plugins.OneSignal.setLogLevel({logLevel: 6, visualLevel: 0});
+  
+  var notificationOpenedCallback = function(jsonData) {
+    console.log('notificationOpenedCallback: ' + JSON.stringify(jsonData));
+  };
+  // Set your iOS Settings
+  var iosSettings = {};
+  iosSettings["kOSSettingsKeyAutoPrompt"] = false;
+  iosSettings["kOSSettingsKeyInAppLaunchURL"] = false;
+  
+  window.plugins.OneSignal
+    .startInit("4c4cde84-e951-4d25-849c-1a95bd6d5e26")
+    .handleNotificationOpened(notificationOpenedCallback)
+    .iOSSettings(iosSettings)
+    .inFocusDisplaying(window.plugins.OneSignal.OSInFocusDisplayOption.Notification)
+    .endInit();
+  
+  // The promptForPushNotificationsWithUserResponse function will show the iOS push notification prompt. We recommend removing the following code and instead using an In-App Message to prompt for notification permission (See step 6)
+  window.plugins.OneSignal.promptForPushNotificationsWithUserResponse(function(accepted) {
+    console.log("User accepted notifications: " + accepted);
+  });
+  
 }, false);
   },
 
