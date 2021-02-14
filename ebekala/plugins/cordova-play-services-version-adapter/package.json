@@ -1,58 +1,35 @@
 {
-  "_args": [
-    [
-      {
-        "raw": "cordova-play-services-version-adapter",
-        "scope": null,
-        "escapedName": "cordova-play-services-version-adapter",
-        "name": "cordova-play-services-version-adapter",
-        "rawSpec": "",
-        "spec": "latest",
-        "type": "tag"
-      },
-      "D:\\test_github\\cordova_test2\\test_cor\\test_cor"
-    ]
-  ],
-  "_from": "cordova-play-services-version-adapter@latest",
-  "_hasShrinkwrap": false,
-  "_id": "cordova-play-services-version-adapter@1.0.2",
-  "_inCache": true,
+  "_from": "cordova-play-services-version-adapter",
+  "_id": "cordova-play-services-version-adapter@1.1.0",
+  "_inBundle": false,
+  "_integrity": "sha512-Qsd9VSu6eA2/+6t2aRtuONZcb0wAGtXyQYVfj+iEQokT28ovt31+Abn6D3A8tD0zXP49OrmY2tPLtdiEmRUEcQ==",
   "_location": "/cordova-play-services-version-adapter",
-  "_nodeVersion": "8.9.3",
-  "_npmOperationalInternal": {
-    "host": "s3://npm-registry-packages",
-    "tmp": "tmp/cordova-play-services-version-adapter_1.0.2_1546712016652_0.8089818822786474"
-  },
-  "_npmUser": {
-    "name": "appfeel",
-    "email": "info@appfeel.com"
-  },
-  "_npmVersion": "6.4.1",
   "_phantomChildren": {},
   "_requested": {
+    "type": "tag",
+    "registry": true,
     "raw": "cordova-play-services-version-adapter",
-    "scope": null,
-    "escapedName": "cordova-play-services-version-adapter",
     "name": "cordova-play-services-version-adapter",
+    "escapedName": "cordova-play-services-version-adapter",
     "rawSpec": "",
-    "spec": "latest",
-    "type": "tag"
+    "saveSpec": null,
+    "fetchSpec": "latest"
   },
   "_requiredBy": [
     "#USER",
     "/"
   ],
-  "_resolved": "https://registry.npmjs.org/cordova-play-services-version-adapter/-/cordova-play-services-version-adapter-1.0.2.tgz",
-  "_shasum": "08e4fd392ec26dcf28be67a355b79e79d60e4c3a",
-  "_shrinkwrap": null,
+  "_resolved": "https://registry.npmjs.org/cordova-play-services-version-adapter/-/cordova-play-services-version-adapter-1.1.0.tgz",
+  "_shasum": "c8fc7ce6a15c2c9c703ae59b9df9d9dae1a14aac",
   "_spec": "cordova-play-services-version-adapter",
-  "_where": "D:\\test_github\\cordova_test2\\test_cor\\test_cor",
+  "_where": "D:\\test_github\\ebekala_app\\ebekala\\ebekala",
   "author": {
     "name": "AppFeel"
   },
   "bugs": {
     "url": "https://github.com/appfeel/cordova-play-services-version-adapter/issues"
   },
+  "bundleDependencies": false,
   "contributors": [
     {
       "name": "David Silvestre Gil",
@@ -76,23 +53,12 @@
       "www"
     ]
   },
-  "dependencies": {},
+  "deprecated": false,
   "description": "Cordova/Ionic Google Play Services Versions Incompatibility Adapter",
-  "devDependencies": {},
-  "directories": {},
-  "dist": {
-    "integrity": "sha512-rYL0aCl1Db7+r/tOFCcU8uVymKWcBdxadw84afbQYTGKp2WPwToTonUUppdSo7Z7DYTa9P/aPjvnKbwO1d+cAg==",
-    "shasum": "08e4fd392ec26dcf28be67a355b79e79d60e4c3a",
-    "tarball": "https://registry.npmjs.org/cordova-play-services-version-adapter/-/cordova-play-services-version-adapter-1.0.2.tgz",
-    "fileCount": 8,
-    "unpackedSize": 131902,
-    "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcMPPRCRA9TVsSAnZWagAAlRQP/i/pcFBGo5E+LLOwD7Hb\nQeAn6oYXnrJcng5Uxrkh6/GLZOxfsau8Kwwd1TCdB9EYbzQSYaqjERxWoq93\nAifnpKO1AIezuiJE1xFbSQcdnT9P35rxKMlJ18oCfblokszCQV5McKJzq8P3\nccXa+eVVrndplXvJY6uykmSPU17xcrc6bOA+F6b8m1MSM/oS+R4USvJhYG8B\n1m+Eo7xAmaJ6n0Smy7dvT2NCbgWOTRuL9v9BzryacHVDOr5/43t+or/Y3n8X\n4HEXVMUzeMhCct0NDXi7KmC514RAMIXOnK1ckTqbnLqjHMT/cvj52H9BXnSF\nZNhyn//dHOzW7Er/ta5CrCL1tzH6VScqC2vkpB+Fva/NNFyaf7qUn5O98iIv\n8/6EcKbWJuB4WHQ/h6KykZ+xW/YLIcOvFs32zB2ZkefO+tw9G7+cPc3cnu5K\nFtOjTd0IqLk9ugX7er4lq0O2VsHpEQUklI+hNzTgPDkQF+y9m+K+J3RUmsLZ\nnHK/t+YqkCgsMsvBE25QAauClDq+vRB7Q9P7qOmB+W6Vip0fJKlzVrkvEoA9\n+URNRQqQLZ0Wffs/39JxibLKGSel39a5CXUlPnNEjryt3RjZNY4F2Th/LvJT\naRTTad24uguOHmUtJtGZJyZhET3QmUxgcvKxxoycAgALN927ZHSq/hFWr4fc\nTGMd\r\n=Kyvs\r\n-----END PGP SIGNATURE-----\r\n"
-  },
   "engines": {
     "name": "cordova",
     "version": ">=7.0.0"
   },
-  "gitHead": "f4b010bfb69519c784984eec9d5fb30c6639e23b",
   "homepage": "https://github.com/appfeel/cordova-play-services-version-adapter#readme",
   "keywords": [
     "exception",
@@ -115,18 +81,10 @@
     "cordova"
   ],
   "license": "MIT",
-  "maintainers": [
-    {
-      "name": "appfeel",
-      "email": "info@appfeel.com"
-    }
-  ],
   "name": "cordova-play-services-version-adapter",
-  "optionalDependencies": {},
-  "readme": "ERROR: No README data found!",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/appfeel/cordova-play-services-version-adapter.git"
   },
-  "version": "1.0.2"
+  "version": "1.1.0"
 }

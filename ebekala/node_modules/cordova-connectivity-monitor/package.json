@@ -1,37 +1,19 @@
 {
-  "_args": [
-    [
-      {
-        "raw": "cordova-connectivity-monitor",
-        "scope": null,
-        "escapedName": "cordova-connectivity-monitor",
-        "name": "cordova-connectivity-monitor",
-        "rawSpec": "",
-        "spec": "latest",
-        "type": "tag"
-      },
-      "D:\\test_github\\cordova_test2\\test_cor\\test_cor"
-    ]
-  ],
-  "_from": "cordova-connectivity-monitor@latest",
+  "_from": "cordova-connectivity-monitor",
   "_id": "cordova-connectivity-monitor@1.2.2",
-  "_inCache": true,
+  "_inBundle": false,
+  "_integrity": "sha1-roY+lgZgSylIK1Fv2E8maHohBT0=",
   "_location": "/cordova-connectivity-monitor",
-  "_nodeVersion": "0.12.4",
-  "_npmUser": {
-    "name": "appfeel",
-    "email": "info@appfeel.com"
-  },
-  "_npmVersion": "2.10.1",
   "_phantomChildren": {},
   "_requested": {
+    "type": "tag",
+    "registry": true,
     "raw": "cordova-connectivity-monitor",
-    "scope": null,
-    "escapedName": "cordova-connectivity-monitor",
     "name": "cordova-connectivity-monitor",
+    "escapedName": "cordova-connectivity-monitor",
     "rawSpec": "",
-    "spec": "latest",
-    "type": "tag"
+    "saveSpec": null,
+    "fetchSpec": "latest"
   },
   "_requiredBy": [
     "#USER",
@@ -39,15 +21,15 @@
   ],
   "_resolved": "https://registry.npmjs.org/cordova-connectivity-monitor/-/cordova-connectivity-monitor-1.2.2.tgz",
   "_shasum": "ae863e9606604b29482b516fd84f26687a21053d",
-  "_shrinkwrap": null,
   "_spec": "cordova-connectivity-monitor",
-  "_where": "D:\\test_github\\cordova_test2\\test_cor\\test_cor",
+  "_where": "D:\\test_github\\ebekala_app\\ebekala\\ebekala",
   "author": {
     "name": "AppFeel"
   },
   "bugs": {
     "url": "https://github.com/appfeel/connectivity-monitor-cordova/issues"
   },
+  "bundleDependencies": false,
   "cordova": {
     "id": "cordova-connectivity-monitor",
     "platforms": [
@@ -55,21 +37,14 @@
       "ios"
     ]
   },
-  "dependencies": {},
+  "deprecated": false,
   "description": "Connectivity status monitoring. Detects if there is WIFI/3G/EDGE/CDMA available.",
-  "devDependencies": {},
-  "directories": {},
-  "dist": {
-    "shasum": "ae863e9606604b29482b516fd84f26687a21053d",
-    "tarball": "https://registry.npmjs.org/cordova-connectivity-monitor/-/cordova-connectivity-monitor-1.2.2.tgz"
-  },
   "engines": [
     {
       "name": "cordova",
       "version": ">=2.9"
     }
   ],
-  "gitHead": "2ea4d6cc3a29d0fa651e35d3695e810645a71995",
   "homepage": "https://github.com/appfeel/connectivity-monitor-cordova#readme",
   "keywords": [
     "connectivity",
@@ -86,19 +61,10 @@
     "cordova-ios"
   ],
   "license": "MIT",
-  "maintainers": [
-    {
-      "name": "appfeel",
-      "email": "info@appfeel.com"
-    }
-  ],
   "name": "cordova-connectivity-monitor",
-  "optionalDependencies": {},
-  "readme": "ERROR: No README data found!",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/appfeel/connectivity-monitor-cordova.git"
   },
-  "scripts": {},
   "version": "1.2.2"
 }
