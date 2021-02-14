@@ -38,4 +38,8 @@ Ebekala
     <feature name="AdMobAds">
         <param name="android-package" value="com.appfeel.cordova.admob.AdMobAds" />
     </feature>
+    <feature name="FirebasePlugin">
+        <param name="android-package" value="org.apache.cordova.firebase.FirebasePlugin" />
+        <param name="onload" value="true" />
+    </feature>
 </widget>

@@ -50,6 +50,9 @@
     },
     "cordova-admob": {
       "PACKAGE_NAME": "com.realdealagency.ebekalaa"
+    },
+    "cordova-plugin-firebase": {
+      "PACKAGE_NAME": "com.realdealagency.ebekalaa"
     }
   },
   "dependent_plugins": {
