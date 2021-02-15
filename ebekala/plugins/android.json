@@ -7,6 +7,9 @@
     "files": {}
   },
   "installed_plugins": {
+    "cordova-admob": {
+      "PACKAGE_NAME": "com.realdealagency.ebekalaa"
+    },
     "cordova-android-firebase-gradle-release": {
       "FIREBASE-CORE": "17.0.0",
       "FIREBASE-ADS": "18.0.0",
@@ -36,22 +39,6 @@
       "FIREBASE-PERF": "18.0.0",
       "FIREBASE-DATABASE": "18.0.0",
       "FIREBASE-CONFIG": "18.0.0",
-      "PACKAGE_NAME": "com.realdealagency.ebekalaa"
-    },
-    "cordova-android-support-gradle-release": {
-      "ANDROID_SUPPORT_VERSION": "27.+",
-      "PACKAGE_NAME": "com.realdealagency.ebekalaa"
-    },
-    "cordova-plugin-whitelist": {
-      "PACKAGE_NAME": "com.realdealagency.ebekalaa"
-    },
-    "cordova-plugin-inappbrowser": {
-      "PACKAGE_NAME": "com.realdealagency.ebekalaa"
-    },
-    "cordova-admob": {
-      "PACKAGE_NAME": "com.realdealagency.ebekalaa"
-    },
-    "cordova-plugin-firebase": {
       "PACKAGE_NAME": "com.realdealagency.ebekalaa"
     }
   },
