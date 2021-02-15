@@ -1,0 +1,16 @@
+{
+  "dependencies": {},
+  "devDependencies": {
+    "cordova-plugin-whitelist": "~1.3.4",
+    "cordova-admob": "^5.1.0"
+  },
+  "cordova": {
+    "plugins": {
+      "cordova-plugin-whitelist": {},
+      "cordova-admob": {}
+    },
+    "platforms": [
+      "android"
+    ]
+  }
+}
