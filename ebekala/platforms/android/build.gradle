@@ -55,5 +55,5 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
-apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.google.gms:google-services'
 implementation 'com.google.firebase:firebase-messaging:16.0.8'
