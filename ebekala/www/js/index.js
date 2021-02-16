@@ -40,8 +40,8 @@ var app = {
               //admob
            // Set AdMobAds options:
             admob.setOptions({
-              publisherId:           "ca-app-pub-7251676025279948/2412504172",  // Required
-              interstitialAdId:      "ca-app-pub-7251676025279948/4847095820",  // Optional
+              publisherId:           "ca-app-pub-7251676025279948/9724776157",  // Required
+              interstitialAdId:      "ca-app-pub-7251676025279948/1757273334",  // Optional
               autoShowBanner:        true,                                      // Optional
               autoShowRInterstitial: false,                                     // Optional
               autoShowRewarded:      false,                                     // Optional
