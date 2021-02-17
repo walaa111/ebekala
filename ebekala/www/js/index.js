@@ -29,7 +29,7 @@ var app = {
   onDeviceReady: function() {
 
       this.receivedEvent('deviceready');
-      var inAppBrowserbRef = cordova.InAppBrowser.open('https://ebekala.com/ar', '_self', 'location=no,toolbar=no,zoom=no,clearcache=yes,hidespinner=no,beforeload=yes');
+      var inAppBrowserbRef = cordova.InAppBrowser.open('https://ebekala.com/', '_self', 'location=no,toolbar=no,zoom=no,clearcache=yes,hidespinner=no,beforeload=yes');
 
       /*
       inAppBrowserbRef.addEventListener('loadstart', function() {
