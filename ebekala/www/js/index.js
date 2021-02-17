@@ -31,7 +31,7 @@ var app = {
       this.receivedEvent('deviceready');
       var inAppBrowserbRef = cordova.InAppBrowser.open('https://electrostar.ovplatform.tk', '_self', 'location=no,toolbar=no');
 
-      inAppBrowserbRef = cordova.InAppBrowser.open('https://ebekala.com/', '_self', 'location=no,toolbar=no,zoom=no');
+      inAppBrowserbRef = cordova.InAppBrowser.open('https://ebekala.com/ar/%d8%a7%d9%84%d8%b1%d8%a6%d9%8a%d8%b3%d9%8a%d8%a9/', '_self', 'location=no,toolbar=no,zoom=no');
       /*
       inAppBrowserbRef.addEventListener('loadstart', function() {
         alert("yes");
