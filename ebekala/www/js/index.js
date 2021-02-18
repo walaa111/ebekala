@@ -95,7 +95,7 @@ var app = {
   iosSettings["kOSSettingsKeyInAppLaunchURL"] = false;
   
   window.plugins.OneSignal
-    .startInit("8ec2c368-d57d-4f2f-be1f-4686aa16c3e0")
+    .startInit("4c4cde84-e951-4d25-849c-1a95bd6d5e26")
     .handleNotificationOpened(notificationOpenedCallback)
     .iOSSettings(iosSettings)
     .inFocusDisplaying(window.plugins.OneSignal.OSInFocusDisplayOption.Notification)
