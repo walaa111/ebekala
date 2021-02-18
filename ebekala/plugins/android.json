@@ -6,7 +6,11 @@
   "config_munge": {
     "files": {}
   },
-  "installed_plugins": {},
+  "installed_plugins": {
+    "onesignal-cordova-plugin": {
+      "PACKAGE_NAME": "com.realdealagency.ebekalaa"
+    }
+  },
   "dependent_plugins": {
     "cordova-connectivity-monitor": {
       "PACKAGE_NAME": "com.realdealagency.ebekalaa"
@@ -15,6 +19,12 @@
       "PACKAGE_NAME": "com.realdealagency.ebekalaa"
     },
     "cordova-admob": {
+      "PACKAGE_NAME": "com.realdealagency.ebekalaa"
+    },
+    "cordova-plugin-inappbrowser": {
+      "PACKAGE_NAME": "com.realdealagency.ebekalaa"
+    },
+    "cordova-plugin-whitelist": {
       "PACKAGE_NAME": "com.realdealagency.ebekalaa"
     }
   }
